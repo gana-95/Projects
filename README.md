@@ -12,7 +12,7 @@
 
 ## Django
 
-1. A meetup aaplication
+1. A meetup application
 2. A blog site
 
 ## Flask
