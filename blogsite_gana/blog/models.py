@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 # Create your models here.
 class PublishedManager(models.Manager):
@@ -24,6 +25,7 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True) # Time when the post is first created
     updated = models.DateTimeField(auto_now=True) # Last time when the post is updated
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft') # Shows whether the post is a draft or published
+    tags = TaggableManager()
 
     class Meta:
         ordering = ('-publish',)
